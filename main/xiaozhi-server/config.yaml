@@ -74,6 +74,9 @@ stop_tts_notify_voice: "config/assets/tts_notify.mp3"
 # 是否启用WebSocket心跳保活机制
 enable_websocket_ping: false
 
+auto_save_voice: false
+auto_save_voice_text: false
+
 
 # TTS音频发送延迟配置
 # tts_audio_send_delay: 控制音频包发送间隔
@@ -222,11 +225,11 @@ selected_module:
   # 语音识别模块，默认使用FunASR本地模型
   ASR: FunASR
   # 将根据配置名称对应的type调用实际的LLM适配器
-  LLM: ChatGLMLLM
+  #LLM: ChatGLMLLM
   # 视觉语言大模型
-  VLLM: ChatGLMVLLM
+  #VLLM: ChatGLMVLLM
   # TTS将根据配置名称对应的type调用实际的TTS适配器
-  TTS: EdgeTTS
+  #TTS: EdgeTTS
   # 记忆模块，默认不开启记忆；如果想使用超长记忆，推荐使用mem0ai；如果注重隐私，请使用本地的mem_local_short
   Memory: nomem
   # 意图识别模块开启后，可以播放音乐、控制音量、识别退出指令。
@@ -234,7 +237,7 @@ selected_module:
   # 意图识别可使用intent_llm。优点：通用性强，缺点：增加串行前置意图识别模块，会增加处理时间，支持控制音量大小等iot操作
   # 意图识别可使用function_call，缺点：需要所选择的LLM支持function_call，优点：按需调用工具、速度快，理论上能全部操作所有iot指令
   # 默认免费的ChatGLMLLM就已经支持function_call，但是如果像追求稳定建议把LLM设置成：DoubaoLLM，使用的具体model_name是：doubao-1-5-pro-32k-250115
-  Intent: function_call
+  #Intent: function_call
 
 # 意图识别，是用于理解用户意图的模块，例如：播放音乐
 Intent:
